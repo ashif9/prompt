@@ -2,15 +2,9 @@
     $content = getContent('login.content', true);
 @endphp
 @extends($activeTemplate . 'layouts.app')
-
 @section('panel')
     <section class="account">
-        <div class="account__inner  flex-wrap">
-            <div class="account-left  flex-wrap">
-                <div class="account-left__thumb">
-                    <img src="{{ frontendImage('login', @$content->data_values->image, '1000x950') }}" alt="image" class="fit-image">
-                </div>
-            </div>
+        <div class="account__inner flex-wrap">
             <div class="account-right">
                 <div class="account-content">
                     <div class="account-form">
@@ -45,15 +39,11 @@
                                     <a href="{{ route('user.password.request') }}" class="forgot-text text-color">@lang('Forgot password?')</a>
                                 </div>
                             </div>
-
                             <x-captcha />
-
                             <div class="form-group">
                                 <button type="submit" id="recaptcha" class="btn btn--base h-48 w-100">@lang('Submit')</button>
                             </div>
-
                             @include($activeTemplate . 'partials.social_login')
-
                             <div class="form-group mt-3">
                                 <div class="have-account text-center">
                                     <p class="have-account__text fs-16">@lang('Don\'t have an account?')
@@ -61,9 +51,13 @@
                                     </p>
                                 </div>
                             </div>
-
                         </form>
                     </div>
+                </div>
+            </div>
+            <div class="account-left flex-wrap">
+                <div class="account-left__thumb">
+                    <img src="{{ frontendImage('login', @$content->data_values->image, '1000x950') }}" alt="image" class="fit-image">
                 </div>
             </div>
         </div>
